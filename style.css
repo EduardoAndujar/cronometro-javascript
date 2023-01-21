@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Rye', cursive;
+}
+
+section.tela-cronometro {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tela-cronometro .titulo {
+    margin: 7px;
+    font-size: 30px;
+}
+
+.cronometro {
+    width: 450px;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+h1#watch {
+    color: white;
+    padding: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    width: 30%;
+    padding: 20px 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Rye', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.start-btn {
+    background-color: rgba(0, 255, 0, 0.7);
+}
+
+.pause-btn {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.stop-btn {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+section.bolhas {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+span.bolha {
+    border: 1px solid white;
+    border-radius: 50%;
+    box-shadow: inset 1px -1px 5px white;
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    bottom: -50px;
+    animation: animate 4s linear infinite;
+}
+
+span.bolha::before {
+    position: absolute;
+    content: '';
+    background: radial-gradient(#fff, transparent);
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    top: 15px;
+    left: 13px;
+    box-shadow: 0px 0px 10px white;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1200%);
+        opacity: 0;
+    }
+}
